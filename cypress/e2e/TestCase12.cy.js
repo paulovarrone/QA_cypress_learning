@@ -4,9 +4,29 @@ describe('template spec', () => {
 		cy.visitarURL12();
 	})
 
-	it('Vai em produtos, hover em dois produtos, clica adiciona os dois ao carrinho e verifica preço, quantidade e total', () => {
-		cy.adicionarAoCarrinho();     
+	it('Entra em produtos e verifica visibilidade', () => {
+		cy.entraEmProdutos();
+	})
+
+	it('Hover e adicionar produtos ao carrinho', () => {
+		cy.hoverEAdicionarProdutosAoCarrinho();
+	})
+
+	it('Entrar no carrinho e verificar visibilidade dos produtos', () => {
+		cy.entrarNoCarrinhoVerificaVisibilidadeProdutos();
+	})
+
+	it('Verificar detalhes dos produtos no carrinho', () => {
+		cy.verificarDetalhesProdutosNoCarrinho();
+	})
+
+	it('Prosseguir para checkout', () => {
+		cy.prosseguirParaCheckout();
 	})
 
    
 })
+
+
+
+
