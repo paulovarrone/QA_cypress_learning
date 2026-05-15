@@ -15,6 +15,7 @@ module.exports = defineConfig({
       '*adservice.google.com',
       '*facebook.net'
     ],
+    testIsolation: false,
     setupNodeEvents(on, config) {
     },
   },
