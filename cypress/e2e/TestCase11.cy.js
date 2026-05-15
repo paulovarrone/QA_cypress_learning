@@ -4,8 +4,25 @@ describe('template spec', () => {
 		cy.visitarURLdecimoPrim();
 	})
 
-	it('Clica no carrinho de compras, da scroll para o fim da pagina, verifica se tem o texto subscription, colocar o email da inscrição e clica no botao, no final verifica se a mensagem de sucesso apareceu', () => {
-		cy.carrinhoCompras();
+	it('Entrar na pagina do carrinho', () => {
+		cy.entrarNaPaginaDoCarrinho();
+	})
+
+	it('Scroll para o fim da pagina', () => {
+		cy.scrollParaFimDaPagina();
+	})
+
+	it('Verificar se tem o texto subscription', () => {
+		cy.verificarVisibilidadeInscricao();
+	})
+
+	it('Realizar a inscrição', () => {
+		cy.realizarInscricao();
+	})
+
+	it('Verificar mensagem de sucesso', () => {
+		cy.verificarMensagemSucesso();
 	})
 
 })
+

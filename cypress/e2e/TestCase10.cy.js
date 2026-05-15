@@ -4,8 +4,15 @@ describe('template spec', () => {
 		cy.visitarURLDecimoTeste();
 	})
 
-	it('Vai para o fim da pagina, se inscreve nas noticias e testa se foi cadastrado com exito', () => {
+	it('Descer para o fim da pagina', () => {
+		cy.desceParaFimPagina();
+	})
+
+	it('Se inscreve nas noticias e testa se foi cadastrado com exito', () => {
 		cy.seInscreveDecimoTeste();
 	})
 
+	it('Verificar se a inscrição foi feita com exito', () => {
+		cy.verificarInscricao();
+	})
 })
