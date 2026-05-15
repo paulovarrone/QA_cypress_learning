@@ -4,7 +4,7 @@ describe('template spec', () => {
 		cy.visitarURLOitavoTeste();
 	})
 
-	it('Verificar pagina de produtos e se estao viziveis', () => {
+	it('Verificar pagina de produtos e se estao visiveis', () => {
 		cy.verificarProdutos();
 	})
 
