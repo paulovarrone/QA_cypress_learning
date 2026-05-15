@@ -59,10 +59,10 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
             
             cy.contains('li', `${dados.Teste14.first_name} ${dados.Teste14.last_name}`).should('be.visible');
             
-            cy.contains('li', `${dados.Teste14.address1} ${dados.Teste14.address2}`).should('be.visible');
+            cy.contains('li', `${dados.Teste14.address1}`).should('be.visible');
+            cy.contains('li', `${dados.Teste14.address2}`).should('be.visible');
             
-            
-            cy.contains('li', `${dados.Teste14.city}, ${dados.Teste14.state} ${dados.Teste14.zipcode}`).should('be.visible');
+            cy.contains('li', `${dados.Teste14.city} ${dados.Teste14.state} ${dados.Teste14.zipcode}`).should('be.visible');
 
             cy.contains('li', dados.Teste14.country).should('be.visible');
             cy.contains('li', dados.Teste14.phone).should('be.visible');
@@ -71,7 +71,7 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
         
     });
 
-    cy.fixture('pagamentos').then((dados) => {
+    cy.fixture('pagamento').then((dados) => {
         cy.get('.form-control').type(dados.dadosPagamento.textArea);
     });
 
@@ -79,16 +79,17 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
 });
 
 Cypress.Commands.add('realizarPagamento', () => {
-    cy.fixture('pagamentos').then((dados) => {
+    cy.fixture('pagamento').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
-        cy.get('[data-qa="expiry-month"]').select(dados.dadosPagamento.expiryMonth);
-        cy.get('[data-qa="expiry-year"]').select(dados.dadosPagamento.expiryYear);
-        cy.get('[data-qa="cvv"]').type(dados.dadosPagamento.cvv);
+        cy.get('[data-qa="cvc"]').type(dados.dadosPagamento.cvv);
+        cy.get('[data-qa="expiry-month"]').type(dados.dadosPagamento.expiryMonth);
+        cy.get('[data-qa="expiry-year"]').type(dados.dadosPagamento.expiryYear);
         cy.get('[data-qa="pay-button"]').click();
+        cy.contains('#success_message' , 'Your order has been placed successfully!').should('be.visible');
     });
 
-    cy.contains('div' , 'Your order has been placed successfully!').should('be.visible');
+    
 });
 
 Cypress.Commands.add('deletarConta', () => {
