@@ -4,8 +4,19 @@ describe('template spec', () => {
 		cy.visitarURLOitavoTeste();
 	})
 
-	it('Verificar pagina de produtos e se estao viziveis, clicar no primeiro produto e verificar se as informacoes estao visiveis', () => {
-		cy.verificarProdutosOitavoTeste();
+	it('Verificar pagina de produtos e se estao viziveis', () => {
+		cy.verificarProdutos();
+	})
+
+	it('clicar no primeiro produto e verificar se as informacoes estao visiveis ', () => {
+		cy.verificarPrimeiroProduto();
+	})
+
+	it('Verificar detalhes do primeiro produto', () => {
+		cy.verificarDetalhesProduto();
 	})
 
 })
+
+
+
