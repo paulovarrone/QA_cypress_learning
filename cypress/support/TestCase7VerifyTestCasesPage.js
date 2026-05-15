@@ -4,7 +4,6 @@ Cypress.Commands.add('visitarURLSetimoTeste', () => {
 })
 
 Cypress.Commands.add('testCasesSetimoTeste', () => {
-	cy.visitarURL();
 	cy.contains('button', 'Test Cases').click();
 	cy.url().should('include','/test_cases');
 })

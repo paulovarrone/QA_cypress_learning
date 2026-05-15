@@ -3,14 +3,21 @@ Cypress.Commands.add('visitarURLOitavoTeste', () => {
 	cy.get('#slider').should('be.visible');
 })
 
-Cypress.Commands.add('verificarProdutosOitavoTeste', () => {
-    cy.visitarURLOitavoTeste();
+Cypress.Commands.add('verificarProdutos', () => {
 	cy.get('[href="/products"]').click();
 	cy.url().should('include', '/products');
 	cy.contains('h2', 'All Products').should('be.visible');
+	
+})
+
+Cypress.Commands.add('verificarPrimeiroProduto', () => {
 	cy.contains('.features_items').should('not.be.empty');
 	cy.get('[href="/product_details/1"]').click();
 	cy.url().should('include', '/product_details/1');
+	
+})
+
+Cypress.Commands.add('verificarDetalhesProduto', () => {
 	cy.get('.product-information h2').should('be.visible').and('not.be.empty');
 	cy.contains('p','Category').should('be.visible').and('not.be.empty');
 	cy.contains('Span', 'Rs').should('be.visible').and('not.be.empty');
@@ -18,3 +25,5 @@ Cypress.Commands.add('verificarProdutosOitavoTeste', () => {
 	cy.contains('p','Condition').should('be.visible').and('not.be.empty');
 	cy.contains('p','Brand').should('be.visible').and('not.be.empty');
 })
+
+

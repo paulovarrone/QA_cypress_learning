@@ -6,7 +6,6 @@ Cypress.Commands.add('visitarURL', () => {
 })
 
 Cypress.Commands.add('verificarNovoUsuario', () => {
-    cy.visit('https://automationexercise.com/');
     cy.get('a[href="/login"]').click();
     cy.contains('h2', 'New User Signup!').should('be.visible');  
 })

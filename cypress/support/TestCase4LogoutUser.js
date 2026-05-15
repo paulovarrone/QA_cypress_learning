@@ -37,13 +37,11 @@ Cypress.Commands.add('CriarUsuarioQuartoTeste', () => {
 })
 
 Cypress.Commands.add('verificarLoginQuartoTeste', () => {
-    cy.visit('https://automationexercise.com/');
     cy.get('a[href="/login"]').click();
     cy.contains('h2','Login to your account').should('be.visible');
 })
 
 Cypress.Commands.add('logarNaContaQuartoTeste', () => {
-    cy.verificarLoginQuartoTeste();
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="login-email"]').type(dados.Teste4.email);
         cy.get('[data-qa="login-password"]').type(dados.Teste4.password);
