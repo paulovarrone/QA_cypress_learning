@@ -7,16 +7,16 @@ Projeto de automação de testes E2E usando Cypress no site Automation Exercise.
 Crie o arquivo de manifesto package.json utilizando a configuração padrão
 (parâmetro -y):
 
-\`\`\`bash
-npm init -y
-\`\`\`
+
+`npm init -y`
+
 
 Instale o framework como uma dependência de desenvolvimento no escopo do
 projeto:
 
-\`\`\`bash
-npm install cypress --save-dev
-\`\`\`
+
+`npm install cypress --save-dev`
+
 
 Após a conclusão do download, abra o arquivo package.json gerado na raiz do
 projeto e adicione a instrução de inicialização dentro do objeto "scripts":
@@ -27,9 +27,9 @@ projeto e adicione a instrução de inicialização dentro do objeto "scripts":
 
 ## Como rodar os testes
 
-\`\`\`bash
-npm run cypress:open
-\`\`\`
+
+`npm run cypress:open`
+
 
 ## Estrutura
 
