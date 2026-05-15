@@ -85,10 +85,9 @@ Cypress.Commands.add('realizarPagamento', () => {
         cy.get('[data-qa="cvc"]').type(dados.dadosPagamento.cvv);
         cy.get('[data-qa="expiry-month"]').type(dados.dadosPagamento.expiryMonth);
         cy.get('[data-qa="expiry-year"]').type(dados.dadosPagamento.expiryYear);
-        cy.get('[data-qa="pay-button"]').click();
-        cy.contains('#success_message' , 'Your order has been placed successfully!').should('be.visible');
+        cy.get('[data-qa="pay-button"]').click();   
     });
-
+    cy.contains('Congratulations! Your order has been confirmed!').should('be.visible');
     
 });
 
