@@ -25,6 +25,7 @@ import './setimoTeste.js'
 import './oitavoTeste.js'
 import './nonoTeste.js'
 import './decimoTeste.js'
+import './decimoPrimeiro.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
