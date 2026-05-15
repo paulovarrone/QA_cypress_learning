@@ -46,10 +46,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 })
 
-beforeEach(() => {
-  cy.clearCookies()       
-  cy.clearLocalStorage()  
-  // cy.clearAllCookies()    
-  // cy.clearAllLocalStorage() 
-  // cy.clearAllSessionStorage() 
-})
+// beforeEach(() => {
+//   cy.clearCookies()       
+//   cy.clearLocalStorage()  
+//   // cy.clearAllCookies()    
+//   // cy.clearAllLocalStorage() 
+//   // cy.clearAllSessionStorage() 
+// })
