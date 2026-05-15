@@ -4,9 +4,20 @@ describe('template spec', () => {
 		cy.visitarURL13();
 	})
 
-	it('Entra no produto, verifica detalhes, coloca 4 no carrinho e verifica no carrinho se a quantidade está correta.', () => {
-		cy.verificarQuantidade();     
+	it('Entrar em detalhes do produto', () => {
+		cy.entrarEmDetalhesDoProduto();
 	})
 
+	it('Adicionar produto ao carrinho', () => {
+		cy.adicionarProdutoAoCarrinho();
+	})
+
+	it('Verificar quantidade adicionada', () => {
+		cy.verificarQuantidadeAdicionada();
+	})
+
+	
    
 })
+
+
