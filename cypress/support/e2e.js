@@ -28,6 +28,19 @@ import './decimoTeste.js'
 import './decimoPrimeiro.js'
 import './decimoSegundo.js'
 import './decimoTerceiro.js'
+import './decimoQuarto.js'
+// import './decimoQuinto.js'
+// import './decimoSexto.js'
+// import './decimoSetimo.js'
+// import './decimoOitavo.js'
+// import './decimoNono.js'
+// import './vigésimoTeste.js'
+// import './vigesimoPrimeiro.js'
+// import './vigesimoSegundo.js'
+// import './vigesimoTerceiro.js'
+// import './vigesimoQuarto.js'
+// import './vigesimoQuinto.js'
+// import './vigesimoSexto.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
@@ -36,7 +49,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 beforeEach(() => {
   cy.clearCookies()       
   cy.clearLocalStorage()  
-  cy.clearAllCookies()    
-  cy.clearAllLocalStorage() 
-  cy.clearAllSessionStorage() 
+  // cy.clearAllCookies()    
+  // cy.clearAllLocalStorage() 
+  // cy.clearAllSessionStorage() 
 })
