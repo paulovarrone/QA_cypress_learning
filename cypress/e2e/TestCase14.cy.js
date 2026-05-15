@@ -1,4 +1,4 @@
-describe('template spec', {testIsolation: false}, () => {
+describe('template spec', () => {
 
 	it('Visitar url e ver se esta na home', () => {
 		cy.visitarURL14();
