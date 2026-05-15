@@ -1,0 +1,10 @@
+{
+  "dadosPagamento": {
+    "textArea": "LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISICING ELIT. QUISQUAM, QUISQUAM.",
+    "cardName": "Junior Nando Marcola",
+    "cardNumber": "4111 1111 1111 1111",
+    "expiryMonth": "12",
+    "expiryYear": "25",
+    "cvv": "123"
+  }
+}
