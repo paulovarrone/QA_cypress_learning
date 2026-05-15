@@ -4,12 +4,12 @@ Cypress.Commands.add('visitarURLdecimoPrim', () => {
 });
 
 Cypress.Commands.add('carrinhoCompras', () => {
-    cy.fixture('formulario').then((dados) => {
+    cy.fixture('subscription').then((dados) => {
         cy.visitarURLdecimoPrim();
         cy.contains('a[href="/view_cart"]', 'Cart').click();
         cy.scrollTo('bottom');
         cy.contains('h2', 'Subscription').should('be.visible');
-        cy.get('#susbscribe_email').type(dados.Forms.email);
+        cy.get('#susbscribe_email').type(dados.inscricao.email);
         cy.get('#subscribe').click();
         cy.contains('div', 'You have been successfully subscribed!').should('be.visible');
     });
