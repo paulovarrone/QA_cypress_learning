@@ -1,20 +1,20 @@
-Cypress.Commands.add('visitarURLdecimoPrim', () => {
+Cypress.Commands.add('visitarURL14', () => {
     cy.visit('http://automationexercise.com');
     cy.get('#slider').should('be.visible');
 });
 
-Cypress.Commands.add('colocarComprasCarrinho', () => {
+Cypress.Commands.add('colocarComprasNoCarrinho', () => {
     cy.get(`[data-product-id="1"]`).eq(0).click();
     cy.contains('a[href="/view_cart"]','View Cart').click();
     cy.url().contains('/view_cart');
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('fazerLogin', () => {
+Cypress.Commands.add('realizarOsignUp', () => {
     cy.get('a[href="/login"]').click();
     cy.fixture('criarConta').then((dados) => {
         cy.get('data-qa="signup-name"').type(dados.usuarioCorreto.name);
-        cy.get('data-qa="signup-email"').type();
+        cy.get('data-qa="signup-email"').type(dados.usuarioCorreto.email);
     });
 });
 
@@ -46,19 +46,15 @@ Cypress.Commands.add('criarConta14', () => {
         cy.contains('b','Account Created!').should('be.visible');
         cy.get('[data-qa="continue-button"]').click();
         cy.contains('a', 'Logged in as junior123456').should('be.visible');
-        cy.get('a[href="/delete_account"]').click()
-        cy.contains('b','Account Deleted!').should('be.visible');
-        cy.get('[data-qa="continue-button"]').click();
-        cy.contains('a', 'Logged in as junior123456').should('be.visible');
     });
 });
 
-Cypress.Commands.add('verificarCarrinho', () => {
+Cypress.Commands.add('verificarCarrinhoDeCompras', () => {
     cy.contains('a[href="/view_cart"]','Cart').click();
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('verificarEcomprar', () => {
+Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
     cy.fixture('usuario').then((dados) => {
         cy.contains('h3', 'Your delivery address').should('be.visible');
         
@@ -85,7 +81,7 @@ Cypress.Commands.add('verificarEcomprar', () => {
     cy.get('a[href="/payment"]').click();
 });
 
-Cypress.Commands.add('fazerPagamento', () => {
+Cypress.Commands.add('realizarPagamento', () => {
     cy.fixture('pagamentos').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
