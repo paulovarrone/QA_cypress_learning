@@ -40,19 +40,21 @@ projeto e adicione a instrução de inicialização dentro do objeto "scripts":
 Após a configuração inicial realizada pelo assistente gráfico, o framework criará
 uma estrutura de diretórios na raiz do projeto contendo as seguintes pastas
 principais:
- fixtures/: Armazena dados estáticos e arquivos JSON estruturados para
+
+1. fixtures/: Armazena dados estáticos e arquivos JSON estruturados para
 simular respostas de APIs ou dados de entrada (mocks).
- e2e/ (ou integration/ em versões legadas): Diretório dedicado ao
+2. e2e/ (ou integration/ em versões legadas): Diretório dedicado ao
 armazenamento dos arquivos de teste estruturados (ex: login.cy.js).
- plugins/: Permite estender ou modificar comportamentos internos do
+3. plugins/: Permite estender ou modificar comportamentos internos do
 framework de maneira dinâmica.
- support/: Destinado à criação de comandos personalizados
+4. support/: Destinado à criação de comandos personalizados
 (commands.js) e configurações globais que serão executadas antes dos
 arquivos de teste.
 
 Para validar a instalação, utilizaremos o site de testes Sauce Demo
 (https://www.saucedemo.com/) para criar um script básico de verificação de
 login.
+
 1. Dentro da pasta do projeto, navegue até o diretório de testes ponta a
 ponta (cypress/e2e/).
 2. Crie um arquivo com a extensão .cy.js, por exemplo: login.cy.js.
@@ -60,6 +62,7 @@ ponta (cypress/e2e/).
 inicial e o preenchimento de credenciais:
 
 Executando o cenário criado:
+
 1. Com a interface gráfica do Cypress aberta (npm run cypress:open),
 selecione a opção E2E Testing.
 2. Escolha o navegador de sua preferência (ex: Chrome ou Electron) e
