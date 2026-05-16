@@ -29,18 +29,8 @@ import './TestCase11VerifySubscriptionInCartPage.js'
 import './TestCase12AddProductsInCart.js'
 import './TestCase13VerifyProductQuantityInCart.js'
 import './decimoQuarto.js'
-// import './decimoQuinto.js'
-// import './decimoSexto.js'
-// import './decimoSetimo.js'
-// import './decimoOitavo.js'
-// import './decimoNono.js'
-// import './vigésimoTeste.js'
-// import './vigesimoPrimeiro.js'
-// import './vigesimoSegundo.js'
-// import './vigesimoTerceiro.js'
-// import './vigesimoQuarto.js'
-// import './vigesimoQuinto.js'
-// import './vigesimoSexto.js'
+import './TestCase15PlaceOrderRegisterBeforeCheckout.js'
+
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
