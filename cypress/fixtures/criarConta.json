@@ -67,5 +67,27 @@
         "city": "niteroi",
         "zipcode": "22011010",
         "mobile_number": "+5521999999999" 
+    },
+    "Teste16Login": {   
+        "name": "teste16",    
+        "email": "teste16@teste16.com" 
+    },
+    "Teste16Informacoes": {   
+        "name": "teste16",
+        "email": "teste16@teste16.com",
+        "name2": "123456",
+        "password": "123456",
+        "day": "3",
+        "month": "March",
+        "year": "1996",
+        "first_name": "teste16",
+        "last_name": "teste16",
+        "company": "teste16",
+        "address1": "teste16",
+        "address2": "teste16",
+        "state": "teste16",
+        "city": "teste16",
+        "zipcode": "22011010",
+        "mobile_number": "21999999999" 
     }
 }
