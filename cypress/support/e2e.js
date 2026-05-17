@@ -34,7 +34,7 @@ import './TestCase16PlaceOrderLoginBeforeCheckout.js'
 import './TestCase17RemoveProductsFromCart.js'
 import './TestCase18ViewCategoryProducts.js'
 import './TestCase19View&CartBrandProducts.js'
-
+import './TestCase21AddReviewOnProduct.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
