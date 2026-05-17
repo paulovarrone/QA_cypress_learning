@@ -32,6 +32,7 @@ import './decimoQuarto.js'
 import './TestCase15PlaceOrderRegisterBeforeCheckout.js'
 import './TestCase16PlaceOrderLoginBeforeCheckout.js'
 import './TestCase17RemoveProductsFromCart.js'
+import './TestCase18ViewCategoryProducts.js'
 
 
 Cypress.on('uncaught:exception', (err, runnable) => {
