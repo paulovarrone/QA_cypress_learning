@@ -9,7 +9,7 @@ Cypress.Commands.add('visitarURL24', () => {
 })
 
 
-Cypress.Commands.add('colocarComprasNoCarrinho', () => {
+Cypress.Commands.add('colocarComprasNoCarrinho24', () => {
     produtosID.forEach((id) => {
         cy.get(`[data-product-id="${id}"]`).eq(0).click();
         cy.contains('Continue Shopping').click();
@@ -21,11 +21,11 @@ Cypress.Commands.add('colocarComprasNoCarrinho', () => {
 });
 
 
-Cypress.Commands.add('acessarPaginaLogin', () => {
+Cypress.Commands.add('acessarPaginaLogin24', () => {
     cy.contains('u','Register / Login').click();
 });
 
-Cypress.Commands.add('signUp', () => {
+Cypress.Commands.add('signUp24', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="signup-name"]').type(dados.Teste15.name);
         cy.get('[data-qa="signup-email"]').type(dados.Teste15.email);
@@ -34,7 +34,7 @@ Cypress.Commands.add('signUp', () => {
 });
 
 
-Cypress.Commands.add('criarConta15', () => {
+Cypress.Commands.add('criarConta24', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.get('#id_gender1').click();
         cy.get('[data-qa="name"]').type(dados.Teste24.name2);
@@ -61,13 +61,13 @@ Cypress.Commands.add('criarConta15', () => {
     });
 });
 
-Cypress.Commands.add('voltarAoCarrinho', () => {  
+Cypress.Commands.add('voltarAoCarrinho24', () => {  
     cy.contains('a[href="/view_cart"]','Cart').click();
     cy.url().should('include', '/view_cart'); 
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
+Cypress.Commands.add('verificarInfosEseguirParaPagamento24', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.contains('h3', 'Your delivery address').should('be.visible');
         
@@ -95,7 +95,7 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
 });
 
 
-Cypress.Commands.add('realizarPagamento', () => {
+Cypress.Commands.add('realizarPagamento24', () => {
     cy.fixture('pagamento').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
@@ -108,12 +108,12 @@ Cypress.Commands.add('realizarPagamento', () => {
     
 });
    
-Cypress.Commands.add('baixarFatura', () => {
+Cypress.Commands.add('baixarFatura24', () => {
     cy.contains('a', 'Download Invoice').click();
     cy.readFile('cypress\\downloads\\invoice.txt').should('exist');
 });
 
-Cypress.Commands.add('deletarConta', () => {
+Cypress.Commands.add('deletarConta24', () => {
     cy.get('a[href="/delete_account"]').click()
     cy.contains('b','Account Deleted!').should('be.visible');
     cy.get('[data-qa="continue-button"]').click();

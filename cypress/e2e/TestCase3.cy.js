@@ -1,19 +1,28 @@
 describe('template spec', () => {
  
-  it('Entrar no site e ver se tem slider para se sertificar que é a home', () => {
-    cy.visitarURLTerceiroTeste();
+  it('Entrar no site', () => {
+    cy.visitarURL3();
+  })
+
+  it('Verificar se está na página inicial', () => {
+    cy.verificarHome3();
+  })
+
+  it('Ir para a página de login', () => {
+    cy.irParaPaginaLogin3();
+  })
+
+  it('Verificar página de login', () => {
+    cy.verificarLogin3();
   })
 
   it('Logar na conta com credenciais inválidas', () => {
-    cy.logarNaContaErroTerceiroTeste();
+    cy.logarNaContaErro3();
   })
 
-
-
-
-
-
-
-
+  it('Verificar mensagem de erro de login', () => {
+    cy.verificarErroLogin3();
+  })
 
 })
+

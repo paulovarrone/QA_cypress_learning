@@ -1,23 +1,27 @@
 describe('template spec', () => {
  
-    it('Entrar no site e ver se tem slider para se sertificar que é a home', () => {
-        cy.visitarURL16();
+    it('Entrar no site', () => {
+        cy.visitarURL17();
+    })
+
+    it('Verificar home page', () => {
+        cy.verificarHome17();
     })
 
     it('Colocar produtos de id 1, 2, 3, 4 e 5 no carrinho', () => {
-        cy.colocarProdutosNoCarrinho();
+        cy.colocarProdutosNoCarrinho17();
     })
 
     it('Ir para o carrinho', () => {
-        cy.irParaOCarrinho();
+        cy.irParaOCarrinho17();
     })
 
     it('Remover produto de id 2(Men Tshirt) e 5(Winter Top) do carrinho', () => {
-        cy.removerProdutoEspecificoDoCarrinho();
+        cy.removerProdutoEspecificoDoCarrinho17();
     })
 
     it('Verificar se o produto 2(Men Tshirt) e 5(Winter Top) foram removidos', () => {
-        cy.verificarProdutoRemovido();
+        cy.verificarProdutoRemovido17();
     })
 
 

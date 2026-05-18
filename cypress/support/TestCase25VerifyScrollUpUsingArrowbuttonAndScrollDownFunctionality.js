@@ -1,21 +1,25 @@
-Cypress.Commands.add('visitarURL26', () => {
+Cypress.Commands.add('visitarURL25', () => {
     cy.visit('https://automationexercise.com/');
-    cy.get('#slider').should('be.visible');
+    
 })
 
-Cypress.Commands.add('scrollParaFimDaPagina', () => {
+Cypress.Commands.add('verificarHome25', () => {
+    cy.get('.rev_slider').should('be.visible');
+})
+
+Cypress.Commands.add('scrollParaFimDaPagina25', () => {
     cy.scrollTo('bottom');
 })
 
-Cypress.Commands.add('verificarSubscription', () => {
+Cypress.Commands.add('verificarSubscription25', () => {
     cy.contains('h2','Subscription').should('be.visible');
 })
 
-Cypress.Commands.add('scrollParaTopoDaPagina', () => {
+Cypress.Commands.add('scrollParaTopoDaPagina25', () => {
     cy.get('#scrollUp').click();
 })
 
-Cypress.Commands.add('verificarScrollParaTopo', () => {
+Cypress.Commands.add('verificarScrollParaTopo25', () => {
     cy.window().its('scrollY').should('equal', 0);
     cy.contains('h2','Full-Fledged practice website for Automation Engineers').should('be.visible');
 })

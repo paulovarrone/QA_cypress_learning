@@ -7,11 +7,15 @@ Cypress.Commands.add('visitarURL15', () => {
     cy.get('#slider').should('be.visible');
 });
 
-Cypress.Commands.add('acessarPaginaLogin', () => {
+Cypress.Commands.add('verificarHome15', () => {
+    cy.get('#slider').should('be.visible');
+});
+
+Cypress.Commands.add('acessarPaginaLogin15', () => {
     cy.get('a[href="/login"]').click();
 });
 
-Cypress.Commands.add('realizarPreLogin', () => {
+Cypress.Commands.add('realizarPreLogin15', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="signup-name"]').type(dados.Teste15.name);
         cy.get('[data-qa="signup-email"]').type(dados.Teste15.email);
@@ -46,7 +50,7 @@ Cypress.Commands.add('criarConta15', () => {
     });
 });
 
-Cypress.Commands.add('colocarComprasNoCarrinho', () => {
+Cypress.Commands.add('colocarComprasNoCarrinho15', () => {
 
     produtosID.forEach((id) => {
         cy.get(`[data-product-id="${id}"]`).eq(0).click();
@@ -58,7 +62,7 @@ Cypress.Commands.add('colocarComprasNoCarrinho', () => {
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
+Cypress.Commands.add('verificarInfosEseguirParaPagamento15', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.contains('h3', 'Your delivery address').should('be.visible');
         
@@ -86,7 +90,7 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
 });
 
 
-Cypress.Commands.add('realizarPagamento', () => {
+Cypress.Commands.add('realizarPagamento15', () => {
     cy.fixture('pagamento').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
@@ -100,7 +104,7 @@ Cypress.Commands.add('realizarPagamento', () => {
 });
 
 
-Cypress.Commands.add('deletarConta', () => {
+Cypress.Commands.add('deletarConta15', () => {
     cy.get('a[href="/delete_account"]').click()
     cy.contains('b','Account Deleted!').should('be.visible');
     cy.get('[data-qa="continue-button"]').click();

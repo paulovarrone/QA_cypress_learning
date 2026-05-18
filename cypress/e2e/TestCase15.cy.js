@@ -1,15 +1,19 @@
 describe('template spec', () => {
 
-	it('Visitar url e ver se esta na home', () => {
+	it('Entrar no site', () => {
 		cy.visitarURL15();
 	})
 
+    it('Verificar se esta na home', () => {
+        cy.verificarHome15();
+    })
+
 	it('Acessar pagina de login', () => {
-        cy.acessarPaginaLogin();
+        cy.acessarPaginaLogin15();
 	})
 
     it('Fazer signup de novo usuario', () => {
-        cy.realizarPreLogin();  
+        cy.realizarPreLogin15();  
 	})
 
     it('Criar conta de novo usuario', () => {
@@ -17,19 +21,19 @@ describe('template spec', () => {
 	})
 
     it('Adicionar produtos ao carrinho', () => {
-        cy.colocarComprasNoCarrinho();   
+        cy.colocarComprasNoCarrinho15();   
 	})
 
     it('Verificar informações de entrega e ir para pagamento', () => {  
-        cy.verificarInfosEseguirParaPagamento();
+        cy.verificarInfosEseguirParaPagamento15();
 	})
 
     it('Realizar pagamento', () => {
-        cy.realizarPagamento();
+        cy.realizarPagamento15();
 	})
 
     it('Deletar conta', () => {
-        cy.deletarConta();
+        cy.deletarConta15();
     });
 
    

@@ -1,9 +1,13 @@
-Cypress.Commands.add('visitarURLSegundoTeste', () => {
+Cypress.Commands.add('visitarURL2', () => {
     cy.visit('https://automationexercise.com/');
+    
+})
+
+Cypress.Commands.add('verificarHome2', () => {
     cy.get('#slider').should('be.visible');
 })
 
-Cypress.Commands.add('CriarUsuarioSegundoTeste', () => {
+Cypress.Commands.add('CriarUsuario2', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.visit('https://automationexercise.com/');
         cy.get('a[href="/login"]').click();
@@ -36,18 +40,30 @@ Cypress.Commands.add('CriarUsuarioSegundoTeste', () => {
     });
 })
 
-Cypress.Commands.add('verificarLoginSegundoTeste', () => {
+Cypress.Commands.add('verificarLogin2', () => {
     cy.get('a[href="/login"]').click();
     cy.contains('h2','Login to your account').should('be.visible');
 })
 
-Cypress.Commands.add('logarNaContasSegundoTeste', () => {
+Cypress.Commands.add('logarNaContas2', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="login-email"]').type(dados.Teste2.email);
         cy.get('[data-qa="login-password"]').type(dados.usuarioCorreto.password);
         cy.get('[data-qa="login-button"]').click();
-        cy.contains('a', 'Logged in as').should('be.visible');
-        cy.get('a[href="/delete_account"]').click()
-        cy.contains('b','Account Deleted!').should('be.visible');
+        
+        
     });
+})
+
+Cypress.Commands.add('verificarLoginRealizado2', () => {
+    cy.contains('a', 'Logged in as junior123456').should('be.visible');
+})
+
+Cypress.Commands.add('deletarConta2', () => {
+    cy.get('a[href="/delete_account"]').click()
+        
+})
+
+Cypress.Commands.add('verificarDeletarConta2', () => {
+    cy.contains('b','Account Deleted!').should('be.visible');
 })

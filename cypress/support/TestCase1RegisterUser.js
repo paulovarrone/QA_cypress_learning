@@ -1,18 +1,18 @@
-// cypress/support/commands.js
-//////////////////////////////////////
-Cypress.Commands.add('visitarURL', () => {
+Cypress.Commands.add('visitarURL1', () => {
     cy.visit('https://automationexercise.com/');
+})
+
+Cypress.Commands.add('verificarHome1', () => {
     cy.get('#slider').should('be.visible');
 })
 
-Cypress.Commands.add('verificarNovoUsuario', () => {
+Cypress.Commands.add('verificarNovoUsuario1', () => {
     cy.get('a[href="/login"]').click();
     cy.contains('h2', 'New User Signup!').should('be.visible');  
 })
 
-Cypress.Commands.add('criarConta', () => {
+Cypress.Commands.add('criarConta1', () => {
     cy.fixture('criarConta').then((dados) => {
-        cy.verificarNovoUsuario();
         cy.get('[placeholder="Name"]').type(dados.usuarioCorreto.name);
         cy.get('[data-qa="signup-email"]').type(dados.usuarioCorreto.email);
         cy.get('[data-qa="signup-button"]').click();
@@ -36,12 +36,26 @@ Cypress.Commands.add('criarConta', () => {
         cy.get('#zipcode').type(dados.usuarioCorreto.zipcode);
         cy.get('#mobile_number').type(dados.usuarioCorreto.mobile_number);
         cy.get('[data-qa="create-account"]').click();
-        cy.contains('b','Account Created!').should('be.visible');
-        cy.get('[data-qa="continue-button"]').click();
-        cy.contains('a', 'Logged in as junior123456').should('be.visible');
-        cy.get('a[href="/delete_account"]').click()
-        cy.contains('b','Account Deleted!').should('be.visible');
-        cy.get('[data-qa="continue-button"]').click();
+
     });
+})
+
+Cypress.Commands.add('verificarContaCriada1', () => {
+    cy.contains('b','Account Created!').should('be.visible');
+    cy.get('[data-qa="continue-button"]').click();
+})
+
+Cypress.Commands.add('verificarUsuarioLogado1', () => {
+    cy.contains('a', 'Logged in as junior123456').should('be.visible');
+})
+
+Cypress.Commands.add('deletarConta1', () => {
+    cy.get('a[href="/delete_account"]').click()
+    
+})
+
+Cypress.Commands.add('verificarContaDeletada1', () => {
+    cy.contains('b','Account Deleted!').should('be.visible');
+    cy.get('[data-qa="continue-button"]').click();
 })
 

@@ -1,16 +1,20 @@
 Cypress.Commands.add('visitarURL14', () => {
     cy.visit('http://automationexercise.com');
+    
+});
+
+Cypress.Commands.add('verificarHomePage14', () => {
     cy.get('#slider').should('be.visible');
 });
 
-Cypress.Commands.add('colocarComprasNoCarrinho', () => {
+Cypress.Commands.add('colocarComprasNoCarrinho14', () => {
     cy.get(`[data-product-id="1"]`).eq(0).click();
     cy.contains('a[href="/view_cart"]','View Cart').click();
     cy.url().should('include', '/view_cart');
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('realizarOsignUp', () => {
+Cypress.Commands.add('realizarOsignUp14', () => {
     cy.contains('a','Register / Login').click();
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="signup-name"]').type(dados.Teste14.name);
@@ -46,12 +50,12 @@ Cypress.Commands.add('criarConta14', () => {
     });
 });
 
-Cypress.Commands.add('verificarCarrinhoDeCompras', () => {
+Cypress.Commands.add('verificarCarrinhoDeCompras14', () => {
     cy.contains('a[href="/view_cart"]','Cart').click();
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
+Cypress.Commands.add('verificarInfosEseguirParaPagamento14', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.contains('h3', 'Your delivery address').should('be.visible');
         
@@ -78,7 +82,7 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
     cy.get('a[href="/payment"]').click();
 });
 
-Cypress.Commands.add('realizarPagamento', () => {
+Cypress.Commands.add('realizarPagamento14', () => {
     cy.fixture('pagamento').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
@@ -91,7 +95,7 @@ Cypress.Commands.add('realizarPagamento', () => {
     
 });
 
-Cypress.Commands.add('deletarConta', () => {
+Cypress.Commands.add('deletarConta14', () => {
     cy.get('a[href="/delete_account"]').click()
     cy.contains('b','Account Deleted!').should('be.visible');
     cy.get('[data-qa="continue-button"]').click();

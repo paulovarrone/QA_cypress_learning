@@ -4,44 +4,48 @@ describe('template spec', () => {
         cy.visitarURL20();
     })
 
+    it('Verificar home page' , () => {
+        cy.verificarHomePage20();
+    })
+
     it('Clicar btn view product' , () => {
-        cy.clicarBtnLogin();
+        cy.clicarBtnLogin20();
     })
 
     it('Verificar btn view product' , () => {
-        cy.pesquisarProduto();
+        cy.pesquisarProduto20();
     })
 
     it('Digitar produto' , () => {
-        cy.digitarProduto();
+        cy.digitarProduto20();
     })
 
     it('Verificar produto pesquisado' , () => {
-        cy.verificarProdutoPesquisado();
+        cy.verificarProdutoPesquisado20();
     })
 
     it('Verificar produto procurado' , () => {
-        cy.verificarProdutoProcurado();
+        cy.verificarProdutoProcurado20();
     })
 
     it('Colocar produto no carrinho' , () => {
-        cy.colocarProdutoNoCarrinho();
+        cy.colocarProdutoNoCarrinho20();
     })
 
     it('Ir ao carrinho e verificar se o produto está presente' , () => {
-        cy.irAoCarrinho();
+        cy.irAoCarrinho20();
     })
 
     it('Realizar login' , () => {
-        cy.realizarLogin();
+        cy.realizarLogin20();
     })
 
     it('Voltando ao carrinho' , () => {
-        cy.irAoCarrinhoSemVerificar();
+        cy.irAoCarrinhoSemVerificar20();
     })
 
     it('Verificar produto no carrinho' , () => {
-        cy.verificarProdutoNoCarrinho();
+        cy.verificarProdutoNoCarrinho20();
     })
 
 

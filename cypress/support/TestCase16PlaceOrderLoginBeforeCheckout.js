@@ -4,14 +4,18 @@ const produtosID = [
 
 Cypress.Commands.add('visitarURL16', () => {
     cy.visit('http://automationexercise.com');
-    cy.get('#slider').should('be.visible');
+    
 });
 
-Cypress.Commands.add('acessarPaginaLogin', () => {
+Cypress.Commands.add('verificarHome16', () => {
+    cy.get('.active').should('be.visible');
+});
+
+Cypress.Commands.add('acessarPaginaLogin16', () => {
     cy.get('a[href="/login"]').click();
 });
 
-Cypress.Commands.add('realizarLogin', () => {
+Cypress.Commands.add('realizarLogin16', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.get('[data-qa="login-email"]').type(dados.Teste16Informacoes.email);
         cy.get('[data-qa="login-password"]').type(dados.Teste16Informacoes.password);
@@ -20,11 +24,11 @@ Cypress.Commands.add('realizarLogin', () => {
     cy.get('[data-qa="login-button"]').click();
 });
 
-Cypress.Commands.add('VerificarUsuarioLogado', () => {
+Cypress.Commands.add('VerificarUsuarioLogado16', () => {
     cy.contains('a', 'Logged in as teste16').should('be.visible');
 });
 
-Cypress.Commands.add('colocarComprasNoCarrinho', () => {
+Cypress.Commands.add('colocarComprasNoCarrinho16', () => {
 
     produtosID.forEach((id) => {
         cy.get(`[data-product-id="${id}"]`).eq(0).click();
@@ -36,7 +40,7 @@ Cypress.Commands.add('colocarComprasNoCarrinho', () => {
     cy.contains('a','Proceed To Checkout').click();
 });
 
-Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
+Cypress.Commands.add('verificarInfosEseguirParaPagamento16', () => {
     cy.fixture('criarConta').then((dados) => {
         cy.contains('h3', 'Your delivery address').should('be.visible');
         
@@ -63,7 +67,7 @@ Cypress.Commands.add('verificarInfosEseguirParaPagamento', () => {
     cy.get('a[href="/payment"]').click();
 });
 
-Cypress.Commands.add('realizarPagamento', () => {
+Cypress.Commands.add('realizarPagamento16', () => {
     cy.fixture('pagamento').then((dados) => {
         cy.get('[data-qa="name-on-card"]').type(dados.dadosPagamento.cardName);
         cy.get('[data-qa="card-number"]').type(dados.dadosPagamento.cardNumber);
@@ -77,7 +81,7 @@ Cypress.Commands.add('realizarPagamento', () => {
 });
 
 
-Cypress.Commands.add('deletarConta', () => {
+Cypress.Commands.add('deletarConta16', () => {
     cy.get('a[href="/delete_account"]').click()
     cy.contains('b','Account Deleted!').should('be.visible');
     cy.get('[data-qa="continue-button"]').click();

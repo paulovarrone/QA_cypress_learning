@@ -4,28 +4,32 @@ describe('template spec', () => {
         cy.visitarURL21();
     })
 
+    it('Verificar home page' , () => {
+        cy.verificarHome21();
+    })
+
     it('Clicar btn view product' , () => {
-        cy.clicarBtnProducts();
+        cy.clicarBtnProducts21();
     }   )
 
     it('Verificar btn view product' , () => {
-        cy.clicarBtnViewProduct();
+        cy.clicarBtnViewProduct21();
     })
 
     it('Clicar view product' , () => {
-        cy.clicarViewProduct();
+        cy.clicarViewProduct21();
     })
 
     it('Verificar texto escrever review' , () => {
-        cy.verificarEscreverReview();
+        cy.verificarEscreverReview21();
     })
 
     it('Escrever review' , () => {
-        cy.escreverReview();
+        cy.escreverReview21();
     })
 
     it('Verificar mensagem de sucesso' , () => {
-        cy.verificarMensagemSucesso();
+        cy.verificarMensagemSucesso21();
     })
 
 
