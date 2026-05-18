@@ -38,8 +38,8 @@ import './TestCase20SearchProductsAndVerifyCartAfterLogin.js'
 import './TestCase21AddReviewOnProduct.js'
 import './TestCase22AddToCartFromRecommendedItems.js'
 
-
-
+import './TestCase24DownloadInvoiceAfterPurchaseOrder.js'
+import './TestCase25VerifyScrollUpUsingArrowbuttonAndScrollDownFunctionality.js'
 import './TestCase26VerifyScrollUpWithoutArrowButtonAndScrollDownFunctionality.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
