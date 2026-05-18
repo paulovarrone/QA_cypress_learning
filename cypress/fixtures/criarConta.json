@@ -89,5 +89,23 @@
         "city": "teste16",
         "zipcode": "22011010",
         "mobile_number": "21999999999" 
-    }
+    },
+    "Teste24": {   
+        "name": "junior",
+        "email": "testeaulaalannnnnnnnnnnnnn@teste.com",
+        "name2": "123456",
+        "password": "123456",
+        "day": "3",
+        "month": "March",
+        "year": "1996",
+        "first_name": "junior",
+        "last_name": "automacao",
+        "company": "teste",
+        "address1": "rua teste, 123",
+        "address2": "casa",
+        "state": "rio de janeiro",
+        "city": "niteroi",
+        "zipcode": "22011010",
+        "mobile_number": "+5521999999999" 
+    }   
 }
