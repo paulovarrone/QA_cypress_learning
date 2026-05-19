@@ -15,6 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './criarConta'
+import './deletarConta'
 import './TestCase1RegisterUser.js'
 import './TestCase2LoginUserWithCorrectEmailandPassword.js'
 import './TestCase3LoginUserWithIncorrectEmailAndPassword.js'
