@@ -20,6 +20,10 @@ describe('template spec', () => {
         cy.criarConta15();     
 	})
 
+    it('Verificar login', () => {
+        cy.verificarLogin15();
+    })
+
     it('Adicionar produtos ao carrinho', () => {
         cy.colocarComprasNoCarrinho15();   
 	})

@@ -7,7 +7,7 @@ const removerProdutoID = [
 ];
 
 Cypress.Commands.add('visitarURL17', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
     
 })
 

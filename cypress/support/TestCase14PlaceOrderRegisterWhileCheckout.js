@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL14', () => {
-    cy.visit('http://automationexercise.com');
+    cy.visit('/');
     
 });
 
@@ -46,7 +46,13 @@ Cypress.Commands.add('criarConta14', () => {
         cy.get('[data-qa="create-account"]').click();
         cy.contains('b','Account Created!').should('be.visible');
         cy.get('[data-qa="continue-button"]').click();
-        cy.contains('a', 'Logged in as junior123456').should('be.visible');
+        
+    });
+});
+
+Cypress.Commands.add('verificarLogin14', () => {
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.Teste14.first_name}${dados.Teste14.name2}`).should('be.visible');
     });
 });
 

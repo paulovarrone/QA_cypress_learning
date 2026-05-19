@@ -3,7 +3,7 @@ const produtosID = [
 ];
 
 Cypress.Commands.add('visitarURL15', () => {
-    cy.visit('http://automationexercise.com');
+    cy.visit('/');
     cy.get('#slider').should('be.visible');
 });
 
@@ -46,7 +46,13 @@ Cypress.Commands.add('criarConta15', () => {
         cy.get('[data-qa="create-account"]').click();
         cy.contains('b','Account Created!').should('be.visible');
         cy.get('[data-qa="continue-button"]').click();
-        cy.contains('a', 'Logged in as junior123456').should('be.visible');
+        
+    });
+});
+
+Cypress.Commands.add('verificarLogin15', () => {
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.Teste15.first_name}${dados.Teste15.name2}`).should('be.visible');
     });
 });
 

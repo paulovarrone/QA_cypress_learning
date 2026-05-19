@@ -20,6 +20,10 @@ describe('template spec', () => {
         cy.criarConta24();
     })
 
+    it('Verificar se o usuário está logado', () => {
+        cy.verificarUsuarioLogado24();
+    })
+
     it('Voltar ao carrinho e seguir para checkout', () => {
         cy.voltarAoCarrinho24();
     })

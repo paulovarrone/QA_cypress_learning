@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL2', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
     
 })
 
@@ -9,7 +9,6 @@ Cypress.Commands.add('verificarHome2', () => {
 
 Cypress.Commands.add('CriarUsuario2', () => {
     cy.fixture('criarConta').then((dados) => {
-        cy.visit('https://automationexercise.com/');
         cy.get('a[href="/login"]').click();
         cy.contains('h2','New User Signup!').should('be.visible');  
         cy.get('[placeholder="Name"]').type(dados.usuarioCorreto.name);
@@ -56,7 +55,9 @@ Cypress.Commands.add('logarNaContas2', () => {
 })
 
 Cypress.Commands.add('verificarLoginRealizado2', () => {
-    cy.contains('a', 'Logged in as junior123456').should('be.visible');
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.usuarioCorreto.first_name}${dados.usuarioCorreto.name2}`).should('be.visible');
+    });
 })
 
 Cypress.Commands.add('deletarConta2', () => {

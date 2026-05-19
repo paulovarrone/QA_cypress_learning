@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL1', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
 })
 
 Cypress.Commands.add('verificarHome1', () => {
@@ -46,7 +46,9 @@ Cypress.Commands.add('verificarContaCriada1', () => {
 })
 
 Cypress.Commands.add('verificarUsuarioLogado1', () => {
-    cy.contains('a', 'Logged in as junior123456').should('be.visible');
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.usuarioCorreto.first_name}${dados.usuarioCorreto.name2}`).should('be.visible');
+    });
 })
 
 Cypress.Commands.add('deletarConta1', () => {

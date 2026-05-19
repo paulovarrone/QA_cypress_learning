@@ -20,6 +20,10 @@ describe('template spec', () => {
         cy.criarConta14();     
 	})
 
+    it('Verificar login', () => {
+        cy.verificarLogin14();
+    })
+
     it('Verificar carrinho de compras e ir para pagamento', () => {
         cy.verificarCarrinhoDeCompras14();   
 	})

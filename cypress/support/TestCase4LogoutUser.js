@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL4', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
     
 })
 
@@ -26,8 +26,10 @@ Cypress.Commands.add('logarNaConta4', () => {
 })
 
 Cypress.Commands.add('verificarUsuarioLogado4', () => {
-    cy.contains('a','Logged in as').should('be.visible');  
-})
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.Teste4.first_name}${dados.Teste4.last_name}`).should('be.visible');
+    });
+});
 
 Cypress.Commands.add('deslogar4', () => {
     cy.get('a[href="/logout"]').click();

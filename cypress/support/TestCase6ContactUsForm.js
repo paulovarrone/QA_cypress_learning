@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL6', () => {
-	cy.visit('http://automationexercise.com');
+	cy.visit('/');
 	
 })
 

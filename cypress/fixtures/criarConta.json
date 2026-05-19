@@ -26,7 +26,9 @@
     },
     "Teste4": {        
         "email": "alanteste444444@teste.com",
-        "password": "123456"
+        "password": "123456",
+        "first_name": "junior",
+        "last_name": "123456"
     },
     "Teste5": {   
         "name": "junior",    

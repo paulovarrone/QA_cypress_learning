@@ -4,7 +4,7 @@ const produtosID = [
 
 
 Cypress.Commands.add('visitarURL24', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
     cy.get('#slider').should('be.visible');
 })
 
@@ -57,7 +57,12 @@ Cypress.Commands.add('criarConta24', () => {
         cy.get('[data-qa="create-account"]').click();
         cy.contains('b','Account Created!').should('be.visible');
         cy.get('[data-qa="continue-button"]').click();
-        cy.contains('a', 'Logged in as junior123456').should('be.visible');
+    });
+});
+
+Cypress.Commands.add('verificarUsuarioLogado24', () => {
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.Teste24.first_name}${dados.Teste24.name2}`).should('be.visible');
     });
 });
 

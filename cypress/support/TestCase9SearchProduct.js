@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL9',() => {
-    cy.visit('http://automationexercise.com');
+    cy.visit('/');
     
 })
 
@@ -29,7 +29,6 @@ Cypress.Commands.add('verificarProdutos9', () => {
 
 Cypress.Commands.add('buscarProdutoNome9', () => {
     cy.fixture('produtos').then((dados) => {
-        cy.visit('http://automationexercise.com');
         cy.get('[href="/products"]').click();
         cy.get('#search_product').clear();
         cy.get('#search_product').type(dados.produtosLoja.produto1);

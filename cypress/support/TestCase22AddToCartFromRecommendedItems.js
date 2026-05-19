@@ -1,5 +1,5 @@
 Cypress.Commands.add('visitarURL22', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
 })
 
 Cypress.Commands.add('verificarPaginaInicial22', () => {

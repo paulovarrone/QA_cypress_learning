@@ -1,7 +1,7 @@
 const marcas = ['Polo', 'H&M', 'Madame', 'Mast & Harbour', 'Babyhug', 'Allen Solly Junior', 'Kookie Kids', 'Biba'];
 
 Cypress.Commands.add('visitarURL19', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
     
 });
 

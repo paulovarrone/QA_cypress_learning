@@ -3,7 +3,7 @@ const produtos = [
 ];
 
 Cypress.Commands.add('visitarURL12', () => {
-    cy.visit('http://automationexercise.com');
+    cy.visit('/');
     
 });
 

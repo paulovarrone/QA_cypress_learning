@@ -1,7 +1,7 @@
 const produtosID = [1, 2, 3, 4, 5];
 
 Cypress.Commands.add('visitarURL23', () => {
-    cy.visit('https://automationexercise.com/');
+    cy.visit('/');
 })
 
 Cypress.Commands.add('verificaHomePage23', () => {
@@ -48,7 +48,9 @@ Cypress.Commands.add('criarConta23', () => {
 });
 
 Cypress.Commands.add('verificarUsuarioLogado23', () => {
-    cy.contains('a', 'Logged in as junior123456').should('be.visible');
+    cy.fixture('criarConta').then((dados) => {
+        cy.contains('a', `Logged in as ${dados.Teste23.first_name}${dados.Teste23.name2}`).should('be.visible');
+    });
 });
 
 Cypress.Commands.add('colocarComprasNoCarrinho23', () => {
