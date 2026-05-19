@@ -4,7 +4,7 @@ Cypress.Commands.add('visitarURL25', () => {
 })
 
 Cypress.Commands.add('verificarHome25', () => {
-    cy.get('.rev_slider').should('be.visible');
+    cy.get('#slider').should('be.visible');
 })
 
 Cypress.Commands.add('scrollParaFimDaPagina25', () => {
