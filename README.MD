@@ -51,9 +51,6 @@ framework de maneira dinâmica.
 (commands.js) e configurações globais que serão executadas antes dos
 arquivos de teste.
 
-Para validar a instalação, utilizaremos o site de testes Sauce Demo
-(https://www.saucedemo.com/) para criar um script básico de verificação de
-login.
 
 1. Dentro da pasta do projeto, navegue até o diretório de testes ponta a
 ponta (cypress/e2e/).
