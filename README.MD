@@ -51,6 +51,16 @@ framework de maneira dinâmica.
 (commands.js) e configurações globais que serão executadas antes dos
 arquivos de teste.
 
+<<<<<<< HEAD
+=======
+
+1. Dentro da pasta do projeto, navegue até o diretório de testes ponta a
+ponta (cypress/e2e/).
+2. Crie um arquivo com a extensão .cy.js, por exemplo: login.cy.js.
+3. Insira a estrutura de código abaixo para testar o carregamento da página
+inicial e o preenchimento de credenciais:
+
+>>>>>>> da64a1c22e77fa7fb2766f75e13b628ab9d4fead
 Executando o cenário criado:
 
 1. Com a interface gráfica do Cypress aberta (npm run cypress:open),
